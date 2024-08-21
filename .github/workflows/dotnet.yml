@@ -56,12 +56,12 @@ jobs:
       needs: build
       steps:
       - name: Download a Build Artifact
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v4
         with:
           name: webapp
           path: webapp
       - name: Deploy web app
-        uses: azure/webapps-deploy@v2
+        uses: azure/webapps-deploy@v4
         with:
           app-name: GitHubApp-@lab.LabInstance.Id
           publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE  }}
